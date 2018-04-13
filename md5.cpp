@@ -1,6 +1,5 @@
 #include "stdafx.h"
-#include <math.h>
-#include "md5.h"
+
 
 uint F(uint X, uint Y, uint Z) {return ((X & Y) | ((~X) & Z));}
 uint G(uint X, uint Y, uint Z) {return (X & Z) | (Y & (~Z));}
@@ -66,7 +65,7 @@ std::string get_md5(std::string in)
 	for(int i = 0; i < size/4; i+=16){
 		AA = A;BB = B; CC = C; DD = D;
 
-		//раунд 1
+		//пїЅпїЅпїЅпїЅпїЅ 1
 		A = B + rotate_left((A + F(B,C,D) + X[i+ 0] + T[ 0]),  7);
 		D = A + rotate_left((D + F(A,B,C) + X[i+ 1] + T[ 1]), 12);
 		C = D + rotate_left((C + F(D,A,B) + X[i+ 2] + T[ 2]), 17);
@@ -87,7 +86,7 @@ std::string get_md5(std::string in)
 		C = D + rotate_left((C + F(D,A,B) + X[i+14] + T[14]), 17);
 		B = C + rotate_left((B + F(C,D,A) + X[i+15] + T[15]), 22);
 
-		//раунд 2
+		//пїЅпїЅпїЅпїЅпїЅ 2
 		A = B + rotate_left((A + G(B,C,D) + X[i+ 1] + T[16]),  5);
 		D = A + rotate_left((D + G(A,B,C) + X[i+ 6] + T[17]),  9);
 		C = D + rotate_left((C + G(D,A,B) + X[i+11] + T[18]), 14);
@@ -108,7 +107,7 @@ std::string get_md5(std::string in)
 		C = D + rotate_left((C + G(D,A,B) + X[i+ 7] + T[30]), 14);
 		B = C + rotate_left((B + G(C,D,A) + X[i+12] + T[31]), 20);
 
-		//раунд 3
+		//пїЅпїЅпїЅпїЅпїЅ 3
 		A = B + rotate_left((A + H(B,C,D) + X[i+ 5] + T[32]),  4);
 		D = A + rotate_left((D + H(A,B,C) + X[i+ 8] + T[33]), 11);
 		C = D + rotate_left((C + H(D,A,B) + X[i+11] + T[34]), 16);
@@ -129,7 +128,7 @@ std::string get_md5(std::string in)
 		C = D + rotate_left((C + H(D,A,B) + X[i+15] + T[46]), 16);
 		B = C + rotate_left((B + H(C,D,A) + X[i+ 2] + T[47]), 23);
 
-		//раунд 4
+		//пїЅпїЅпїЅпїЅпїЅ 4
 		A = B + rotate_left((A + I(B,C,D) + X[i+ 0] + T[48]),  6);
 		D = A + rotate_left((D + I(A,B,C) + X[i+ 7] + T[49]), 10);
 		C = D + rotate_left((C + I(D,A,B) + X[i+14] + T[50]), 15);
